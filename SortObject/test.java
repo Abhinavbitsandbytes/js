@@ -1,22 +1,40 @@
 class Solution {
-    List<String> ans = new ArrayList<>();
-    
-    public List<String> generateParenthesis(int n) {
-        helper("", n, n);
-        return ans;
+    Node flatten(Node root) {
+        if(root==null || root.next==null){
+            return root;
+        }
+        Node mh = flatten(root.next);
+        return merge(mh,root);
     }
-
-    void helper(String current, int left, int right) {
-        if (left == 0 && right == 0) {
-            ans.add(current);
-            return;
+        public static Node merge(Node left, Node right){
+        Node ansH=null;
+        Node ansT=null;
+        while(left!=null && right!=null){
+            if(left.data<right.data){
+                if(ansH == null){
+                    ansH=left;
+                    ansT=left;
+                } else{
+                    ansT.bottom=left;
+                    ansT=ansT.bottom;
+                }
+                left=left.bottom;
+            } else{
+                if(ansH==null){
+                    ansH=right;
+                    ansT=right;
+                } else{
+                    ansT.bottom=right;
+                    ansT=ansT.bottom;
+                }
+                right=right.bottom;
+            } 
         }
-
-        if (left > 0) {
-            helper(current + "(", left - 1, right);
+        if(left!=null){
+            ansT.bottom=left;
+        } else{
+            ansT.bottom=right;
         }
-        if (right > left) {
-            helper(current + ")", left, right - 1);
-        }
+        return ansH; 
     }
 }

@@ -10,14 +10,7 @@ Array.prototype.myForEach = function(cb){
 // })
 
 
-
-
-
-
-
 // ----------------------------------------------------
-
-
 
 
 Array.prototype.myForEach = function(cb, thisArg) {
@@ -76,7 +69,6 @@ const test = {
     b: '234',
 
 }
-
 function tester(){
     console.log(this.a, this.b)
 }
@@ -103,13 +95,11 @@ function myPromiseAll(promises) {
         let results = [];            // Array to store resolved values
         let resolvedCount = 0;       // Counter for resolved promises
         const totalPromises = promises.length;
-
         // If no promises, resolve immediately with an empty array
         if (totalPromises === 0) {
             resolve([]);
             return;
         }
-
         // Iterate through each promise
         promises.forEach((promise, index) => {
             // Make sure the item is treated as a promise
@@ -130,8 +120,6 @@ function myPromiseAll(promises) {
         });
     });
 }
-
-
 // usage
 const promise1 = Promise.resolve(3);
 const promise2 = new Promise((resolve) => setTimeout(resolve, 100, 'foo'));

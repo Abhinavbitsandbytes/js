@@ -45,4 +45,12 @@ function formatObj(obj, path){
 
 console.log(ans)
 
+// {
+//     "obj_name": "abhinav",
+//     "obj_address_permanent_city": "Ballia",
+//     "obj_address_permanent_pin": "1234",
+//     "obj_address_work_city": "Bangalore",
+//     "obj_address_work_pin": "5678"
+// }
+
 
