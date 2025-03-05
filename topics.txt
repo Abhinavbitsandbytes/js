@@ -25,13 +25,14 @@ Memoization                                             ----
 shallow copy and deep copy
 sorting of array of objects
 critical rendering path
-Flatten an objects
+Flatten an objects   ----------
 spread operator vs rest parameter
 slice and splice, index of
 for in and for of
 
 --------
 Object.assign vs Object.create
+map, weakmap, weakset
 
 
 https://docs.google.com/document/d/1rKxO9fsHi6paqd5rbhBe9_2O8eDPzhC9ZsEnIrVkKGU/edit     (js and Angular, (airtel))

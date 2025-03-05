@@ -8,7 +8,7 @@ function doSomeMagic(fn, d){
         let context=this;
     clearTimeout(timer)
    timer = setTimeout(() => {
-        fn.call(context, args);
+        fn.apply(context, args);
     }, d);
 }
 }
